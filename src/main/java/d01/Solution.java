@@ -1,45 +1,48 @@
 package d01;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Iterator;
 import java.util.List;
 
 public class Solution {
 	
-	public List<Integer> createDataFromInput(List<String> input) {
-		List<Integer> values = new ArrayList<>();
-		int value = 0;
-		Iterator var4 = input.iterator();
+	public static Integer getSum(List<String> dataFromInput) {
+		int sum = 0;
 		
-		String str = null;
-		while (var4.hasNext()) {
-			str = (String) var4.next();
-			if (str.equals("")) {
-				values.add(value);
-				value = 0;
-			} else {
-				value += Integer.parseInt(str);
+		for (String str : dataFromInput) {
+			ArrayDeque<Integer> stack = new ArrayDeque<>();
+			for (char ch : str.toCharArray()) {
+				if (Character.isDigit(ch)) {
+					stack.push(Integer.parseInt(String.valueOf(ch)));
+				}
 			}
+			sum = calculateCalibrationValue(stack, sum);
 		}
-		values.add(Integer.parseInt(str));
-		return values;
+		return sum;
 	}
 	
-	public Integer getInteger(List<Integer> dataFromInput) {
-		Integer var = dataFromInput.stream()
-				.max(Integer::compare)
-				.get();
-		return var;
+	/**
+	 * Method that create Calibration Value from first and last digit from each row
+	 */
+	private static int calculateCalibrationValue(ArrayDeque<Integer> stack, int sum) {
+		int lastDigit = stack.getFirst();
+		int firstDigit = stack.getLast();
+		sum += firstDigit * 10 + lastDigit;
+		return sum;
 	}
 	
-	public int getVarTop3(List<Integer> dataFromInput) {
-		return  dataFromInput.stream()
-				.sorted(Comparator.reverseOrder())
-				.limit(3)
-				.mapToInt(Integer::intValue)
-				.sum();
+	/**
+	 * Method that replace e.g. "one" into "one1one"
+	 */
+	public static List<String> replaceDigitsWrittenAsString(List<String> input) {
+		List<String> output = new ArrayList<>();
 		
+		for (String str : input) {
+			for (Digit dig : Digit.values()) {
+				str = str.replaceAll(dig.getDigitAsString(), dig.getDigitAsString().concat(String.valueOf(dig.getDigitValue())).concat(dig.getDigitAsString()));
+			}
+			output.add(str);
+		}
+		return output;
 	}
-	
 }

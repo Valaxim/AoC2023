@@ -1,45 +1,34 @@
 import d01.Solution;
 import org.junit.jupiter.api.Test;
+import utils.ParseUtil;
 
+import java.io.IOException;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test class for {@link Solution}
+ */
 public class TestDay1 {
 	
 	@Test
-	public void test1() {
-		List<Integer> integers = readTestData();
+	public void test1() throws IOException {
+		List<String> input = ParseUtil.readInputLineByLine("testInputDay1_partA.txt");
 		
-		Solution solution = new Solution();
+		int output = Solution.getSum(input);
 		
-		assertEquals(solution.getInteger(integers), 24000);
+		assertEquals(output, 142);
 	}
 	
 	@Test
-	public void test2() {
-		List<Integer> integers = readTestData();
+	public void test2() throws IOException {
+		List<String> input = ParseUtil.readInputLineByLine("testInputDay1_partB.txt");
 		
-		Solution solution = new Solution();
+		List<String> strings = Solution.replaceDigitsWrittenAsString(input);
+		int output = Solution.getSum(strings);
 		
-		assertEquals(solution.getVarTop3(integers), 45000);
+		assertEquals(output, 281);
 	}
-	
-	private List<Integer> readTestData() {
-		List<String> testData = List.of("1000",
-				"2000",
-				"3000",
-				"",
-				"4000",
-				"",
-				"5000",
-				"6000",
-				"",
-				"7000",
-				"8000",
-				"9000",
-				"",
-				"10000");
-		return new Solution().createDataFromInput(testData);
-	}
+
 }
