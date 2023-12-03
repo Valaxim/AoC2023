@@ -21,4 +21,18 @@ public class ParseUtil {
 		}
 		return strings;
 	}
+	
+	public static char[][] read2DArray(String fileName) throws IOException {
+		List<String> rowsArray = readInputLineByLine(fileName);
+		
+		char[][] arrays = new char[rowsArray.size()][rowsArray.get(0).length()];
+		for (int i = 0; i < rowsArray.size(); i++) {
+			String s = rowsArray.get(i);
+			
+			for (int j = 0; j < s.length(); j++) {
+				arrays[i][j] = s.charAt(j);
+			}
+		}
+		return arrays;
+	}
 }

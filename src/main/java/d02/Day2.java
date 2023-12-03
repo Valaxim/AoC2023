@@ -16,8 +16,8 @@ public class Day2 {
 		int outputA = CubeConundrum.getIdsSum(input);
 		long outputB = CubeConundrum.getPowerOfMinimalCubesAmount(input);
 		
-		System.out.println("Answer Day1 partA: " + outputA);
-		System.out.println("Answer Day1 partB: " + outputB);
+		System.out.println("Answer Day2 partA: " + outputA);
+		System.out.println("Answer Day2 partB: " + outputB);
 	}
 }
 
