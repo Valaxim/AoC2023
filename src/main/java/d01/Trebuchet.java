@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Solution {
+public class Trebuchet {
 	
 	public static Integer getSum(List<String> dataFromInput) {
 		int sum = 0;

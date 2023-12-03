@@ -13,10 +13,10 @@ public class Day1 {
 	public static void main(String[] args) throws IOException {
 		List<String> input = ParseUtil.readInputLineByLine("inputDay1.txt");
 		
-		int outputA = Solution.getSum(input);
+		int outputA = Trebuchet.getSum(input);
 		
-		List<String> strings = Solution.replaceDigitsWrittenAsString(input);
-		int outputB = Solution.getSum(strings);
+		List<String> strings = Trebuchet.replaceDigitsWrittenAsString(input);
+		int outputB = Trebuchet.getSum(strings);
 		
 		System.out.println("Answer Day1 partA: " + outputA);
 		System.out.println("Answer Day1 partB: " + outputB);

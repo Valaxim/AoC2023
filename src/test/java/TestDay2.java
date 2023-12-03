@@ -1,4 +1,4 @@
-import d02.Solution;
+import d02.CubeConundrum;
 import org.junit.jupiter.api.Test;
 import utils.ParseUtil;
 
@@ -8,7 +8,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test class for Day 2 {@link Solution}
+ * Test class for Day 2 {@link CubeConundrum}
  */
 public class TestDay2 {
 	
@@ -16,7 +16,7 @@ public class TestDay2 {
 	public void test1() throws IOException {
 		List<String> input = ParseUtil.readInputLineByLine("testInputDay2.txt");
 		
-		int output = Solution.getIdsSum(input);
+		int output = CubeConundrum.getIdsSum(input);
 		
 		assertEquals(output, 8);
 	}
@@ -25,7 +25,7 @@ public class TestDay2 {
 	public void test2() throws IOException {
 		List<String> input = ParseUtil.readInputLineByLine("testInputDay2.txt");
 
-		long output = Solution.getPowerOfMinimalCubesAmount(input);
+		long output = CubeConundrum.getPowerOfMinimalCubesAmount(input);
 		
 		assertEquals(output, 2286);
 	}
