@@ -13,7 +13,7 @@ public class GearRatios {
 	public static final char EMPTY_SYMBOL = '.';
 	public static final char GEAR_SYMBOL = '*';
 	
-	public static int solution(char[][] game) {
+	public static int getPartNumbersSum(char[][] game) {
 		List<EnginePart> enginePartList = createEnginePartList(game);
 		
 		return enginePartList.stream()
@@ -22,7 +22,7 @@ public class GearRatios {
 				.sum();
 	}
 	
-	public static long solutionB(char[][] game) {
+	public static long getAllGearRatiosSum(char[][] game) {
 		List<EnginePart> enginePartList = createEnginePartList(game);
 		List<Item> itemList = findGearItems(game);
 		

@@ -18,7 +18,7 @@ public class TestDay1 {
 		
 		int output = Trebuchet.getSum(input);
 		
-		assertEquals(output, 142);
+		assertEquals(142, output);
 	}
 	
 	@Test
@@ -28,7 +28,7 @@ public class TestDay1 {
 		List<String> strings = Trebuchet.replaceDigitsWrittenAsString(input);
 		int output = Trebuchet.getSum(strings);
 		
-		assertEquals(output, 281);
+		assertEquals(281, output);
 	}
 
 }

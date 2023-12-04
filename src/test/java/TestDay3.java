@@ -16,18 +16,18 @@ public class TestDay3 {
 	public void test1() throws IOException {
 		char[][] game = ParseUtil.read2DArray("testInputDay3.txt");
 		
-		int output = GearRatios.solution(game);
+		int output = GearRatios.getPartNumbersSum(game);
 		
-		assertEquals(output, 4361);
+		assertEquals(4361, output);
 	}
 	
 	@Test
 	public void test2() throws IOException {
 		char[][] game = ParseUtil.read2DArray("testInputDay3.txt");
 		
-		long output = GearRatios.solutionB(game);
+		long output = GearRatios.getAllGearRatiosSum(game);
 		
-		assertEquals(output, 467835);
+		assertEquals(467835, output);
 	}
 
 }

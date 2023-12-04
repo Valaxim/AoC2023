@@ -18,7 +18,7 @@ public class TestDay2 {
 		
 		int output = CubeConundrum.getIdsSum(input);
 		
-		assertEquals(output, 8);
+		assertEquals(8, output);
 	}
 	
 	@Test
@@ -27,7 +27,7 @@ public class TestDay2 {
 
 		long output = CubeConundrum.getPowerOfMinimalCubesAmount(input);
 		
-		assertEquals(output, 2286);
+		assertEquals(2286, output);
 	}
 
 }
