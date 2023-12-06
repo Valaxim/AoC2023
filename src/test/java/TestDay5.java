@@ -8,7 +8,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Test class for Day 5 {@link d05.Almanac}
+ * Test class for Day 5 {@link Almanac}
  */
 public class TestDay5 {
 	
