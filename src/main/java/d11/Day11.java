@@ -13,12 +13,12 @@ public class Day11 {
 	private static final long EXTEND_FACTOR = 1_000_000;
 	
 	public static void main(String[] args) throws IOException {
-
+		
 		char[][] chars = ParseUtil.read2DArray("inputDay11.txt");
 		
-		Long startTime = System.nanoTime();
+		long startTime = System.nanoTime();
 		long outputA = CosmicExpansion.calculate(chars, DOUBLE_FACTOR);
-		Long endTime = System.nanoTime();
+		long endTime = System.nanoTime();
 		
 		System.out.println("Answer Day11 partA: " + outputA + ", calculated in " + (endTime - startTime) / 1000000.0 + " ms");
 		
@@ -26,7 +26,6 @@ public class Day11 {
 		long outputB = CosmicExpansion.calculate(chars, EXTEND_FACTOR);
 		endTime = System.nanoTime();
 		System.out.println("Answer Day11 partB: " + outputB + ", calculated in " + (endTime - startTime) / 1000000.0 + " ms");
-		// too high
 	}
 }
 
