@@ -35,4 +35,41 @@ public class ParseUtil {
 		}
 		return arrays;
 	}
+	
+	public static int[][] read2DIntegerArray(String fileName) throws IOException {
+		List<String> rowsArray = readInputLineByLine(fileName);
+		
+		int[][] arrays = new int[rowsArray.size()][rowsArray.get(0).length()];
+		for (int i = 0; i < rowsArray.size(); i++) {
+			String s = rowsArray.get(i);
+			
+			for (int j = 0; j < s.length(); j++) {
+				arrays[i][j] = Integer.parseInt(String.valueOf(s.charAt(j)));
+			}
+		}
+		return arrays;
+	}
+	
+	public static char[][] parseListToCharArray(List<String> stringList) {
+		int numRows = stringList.size();
+		int maxNumCols = 0;
+		
+		// Find the maximum number of columns
+		for (String str : stringList) {
+			maxNumCols = Math.max(maxNumCols, str.length());
+		}
+		
+		// Create the 2D char array
+		char[][] charArray2D = new char[numRows][maxNumCols];
+		
+		// Populate the 2D char array
+		for (int i = 0; i < numRows; i++) {
+			String str = stringList.get(i);
+			for (int j = 0; j < str.length(); j++) {
+				charArray2D[i][j] = str.charAt(j);
+			}
+		}
+		
+		return charArray2D;
+	}
 }
