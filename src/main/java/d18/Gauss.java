@@ -5,18 +5,18 @@ import java.util.List;
 
 public class Gauss {
 	
-	private static long obwod = 0L;
+	private static long perimeter = 0L;
 	
 	public static double calculateGaussA(List<String> input) {
 		List<Instruction> instructionList = parseInput(input);
 		List<Point> borderPoints = parseInstructionsGauss(instructionList);
-		return calculateAreaGauss(borderPoints) + (0.5 * obwod + 1);
+		return calculateAreaGauss(borderPoints) + (0.5 * perimeter + 1); // adjustment, points have area
 	}
 	
 	public static double calculateGaussB(List<String> input) {
 		List<Instruction> instructionList = parseHexInput(input);
 		List<Point> borderPoints = parseInstructionsGauss(instructionList);
-		return calculateAreaGauss(borderPoints) + (0.5 * obwod + 1);
+		return calculateAreaGauss(borderPoints) + (0.5 * perimeter + 1); // adjustment, points have area
 	}
 	
 	private static List<Instruction> parseInput(List<String> input) {
@@ -46,21 +46,21 @@ public class Gauss {
 	}
 	
 	public static double calculateAreaGauss(List<Point> pointSet) {
-		int n = pointSet.size();
+		int pointsAmount = pointSet.size();
 		double area = 0;
 		
-		for (int i = 0; i < n; i++) {
-			Point current = pointSet.get(i);
-			Point next = pointSet.get((i + 1) % n);
+		for (int point = 0; point < pointsAmount; point++) {
+			Point currentPoint = pointSet.get(point);
+			Point nextPoint = pointSet.get((point + 1) % pointsAmount);
 			
-			area += (current.row * next.col) - (current.col * next.row);
+			area += ((double) currentPoint.row * nextPoint.col) - ((double) currentPoint.col * nextPoint.row);
 		}
 		
 		return 0.5 * Math.abs(area);
 	}
 	
 	private static List<Point> parseInstructionsGauss(List<Instruction> instructionList) {
-		obwod = 0L;
+		perimeter = 0L;
 		Point currentPoint = new Point(0, 0);
 		List<Point> pointSet = new ArrayList<>();
 		pointSet.add(currentPoint);
@@ -73,7 +73,7 @@ public class Gauss {
 				case "D" -> new Point(currentPoint.row() + instruction.step(), currentPoint.col());
 				default -> throw new IllegalStateException("Unexpected value: " + instruction.direction);
 			};
-			obwod += instruction.step();
+			perimeter += instruction.step();
 			pointSet.add(currentPoint);
 		}
 		return pointSet;
