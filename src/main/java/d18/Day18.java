@@ -1,6 +1,5 @@
 package d18;
 
-import d18.LavaductLagoon.Point;
 import utils.ParseUtil;
 
 import java.io.IOException;
@@ -13,12 +12,17 @@ public class Day18 {
 	
 	public static void main(String[] args) throws IOException {
 		List<String> input = ParseUtil.readInputLineByLine("inputDay18.txt");
-	
-		long startTime = System.nanoTime();
-		long outputA = LavaductLagoon.calculate(input, new Point(100,300));
-		long endTime = System.nanoTime();
 		
-		System.out.println("Answer Day18 partA: " + outputA + ", calculated in " + (endTime - startTime) / 1000000.0 + " ms");
+		long startTime = System.nanoTime();
+		double outputGaussA = Gauss.calculateGaussA(input);
+		long endTime = System.nanoTime();
+		System.out.printf("Answer Day18 partA: %.0f, calculated in %f ms %n", outputGaussA, (endTime - startTime) / 1000000.0);
+		
+		startTime = System.nanoTime();
+		double outputGaussB = Gauss.calculateGaussB(input);
+		endTime = System.nanoTime();
+		System.out.printf("Answer Day18 partB: %.0f, calculated in %f ms %n", outputGaussB, (endTime - startTime) / 1000000.0);
+		// 7934109210 - too low
 	}
 }
 
