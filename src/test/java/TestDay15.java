@@ -9,10 +9,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Test class for Day 15 {@link LensLibrary}
  */
-public class TestDay15 {
+class TestDay15 {
 	
 	@Test
-	public void test1() throws IOException {
+	void test1() throws IOException {
 		List<String> input = List.of("HASH");
 		
 		long output = LensLibrary.calculate(input);
@@ -21,7 +21,7 @@ public class TestDay15 {
 	}
 	
 	@Test
-	public void test2() throws IOException {
+	void test2() throws IOException {
 		List<String> input = List.of("rn=1,cm-,qp=3,cm=2,qp-,pc=4,ot=9,ab=5,pc-,pc=6,ot=7");
 		
 		long output = LensLibrary.calculate(input);
@@ -30,7 +30,7 @@ public class TestDay15 {
 	}
 	
 	@Test
-	public void test3() throws IOException {
+	void test3() throws IOException {
 		List<String> input = List.of("rn=1,cm-,qp=3,cm=2,qp-,pc=4,ot=9,ab=5,pc-,pc=6,ot=7");
 		
 		long output = LensLibrary.calculateB(input);

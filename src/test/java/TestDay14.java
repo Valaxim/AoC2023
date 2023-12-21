@@ -9,10 +9,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Test class for Day 14 {@link d14.ParabolicReflectorDish}
  */
-public class TestDay14 {
+class TestDay14 {
 	
 	@Test
-	public void test1() throws IOException {
+	void test1() throws IOException {
 		char[][] input = ParseUtil.read2DArray("testInputDay14.txt");
 		
 		long output = ParabolicReflectorDish.calculate(input);
@@ -21,7 +21,7 @@ public class TestDay14 {
 	}
 	
 	@Test
-	public void test2() throws IOException {
+	void test2() throws IOException {
 		char[][] input = ParseUtil.read2DArray("testInputDay14.txt");
 		
 		long output = ParabolicReflectorDish.calculateB(input);

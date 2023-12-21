@@ -10,10 +10,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Test class for Day 2 {@link CubeConundrum}
  */
-public class TestDay2 {
+class TestDay2 {
 	
 	@Test
-	public void test1() throws IOException {
+	void test1() throws IOException {
 		List<String> input = ParseUtil.readInputLineByLine("testInputDay2.txt");
 		
 		int output = CubeConundrum.getIdsSum(input);
@@ -22,7 +22,7 @@ public class TestDay2 {
 	}
 	
 	@Test
-	public void test2() throws IOException {
+	void test2() throws IOException {
 		List<String> input = ParseUtil.readInputLineByLine("testInputDay2.txt");
 
 		long output = CubeConundrum.getPowerOfMinimalCubesAmount(input);

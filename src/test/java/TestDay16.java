@@ -9,10 +9,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Test class for Day 16 {@link d16.TheFloorWillBeLava}
  */
-public class TestDay16 {
+class TestDay16 {
 	
 	@Test
-	public void test1() throws IOException {
+	void test1() throws IOException {
 		char[][] input = ParseUtil.read2DArray("testInputDay16.txt");
 		
 		long output = TheFloorWillBeLava.calculate(input);
@@ -21,7 +21,7 @@ public class TestDay16 {
 	}
 	
 	@Test
-	public void test2() throws IOException {
+	void test2() throws IOException {
 		char[][] input = ParseUtil.read2DArray("testInputDay16.txt");
 		
 		long output = TheFloorWillBeLava.calculateB(input);

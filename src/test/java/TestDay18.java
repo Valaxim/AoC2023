@@ -10,10 +10,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Test class for Day 18 {@link Gauss}
  */
-public class TestDay18 {
+class TestDay18 {
 	
 	@Test
-	public void test1() throws IOException {
+	void test1() throws IOException {
 		List<String> strings = ParseUtil.readInputLineByLine("testInputDay18.txt");
 		
 		double output = Gauss.calculateGaussA(strings);
@@ -22,7 +22,7 @@ public class TestDay18 {
 	}
 	
 	@Test
-	public void test2() throws IOException {
+	void test2() throws IOException {
 		List<String> strings = ParseUtil.readInputLineByLine("testInputDay18.txt");
 		
 		double output = Gauss.calculateGaussB(strings);

@@ -9,10 +9,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Test class for Day 10 {@link PipeMaze}
  */
-public class TestDay10 {
+class TestDay10 {
 	
 	@Test
-	public void test1() throws IOException {
+	void test1() throws IOException {
 		char[][] input = ParseUtil.read2DArray("testInputDay10_partA_case1.txt");
 		
 		long output = PipeMaze.calculate(input);
@@ -21,7 +21,7 @@ public class TestDay10 {
 	}
 	
 	@Test
-	public void test2() throws IOException {
+	void test2() throws IOException {
 		char[][] input = ParseUtil.read2DArray("testInputDay10_partA_case2.txt");
 		
 		long output = PipeMaze.calculate(input);
@@ -30,7 +30,7 @@ public class TestDay10 {
 	}
 	
 	@Test
-	public void test3() throws IOException {
+	void test3() throws IOException {
 		char[][] input = ParseUtil.read2DArray("testInputDay10_partA_case3.txt");
 		
 		long output = PipeMaze.calculate(input);
@@ -39,7 +39,7 @@ public class TestDay10 {
 	}
 	
 	@Test
-	public void test4() throws IOException {
+	void test4() throws IOException {
 		char[][] input = ParseUtil.read2DArray("testInputDay10_partA_case4.txt");
 		
 		long output = PipeMaze.calculate(input);

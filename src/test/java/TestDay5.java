@@ -10,10 +10,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Test class for Day 5 {@link Almanac}
  */
-public class TestDay5 {
+class TestDay5 {
 	
 	@Test
-	public void test1() throws IOException {
+	void test1() throws IOException {
 		List<String> input = ParseUtil.readInputLineByLine("testInputDay5.txt");
 		
 		long output = Almanac.calculate(input);

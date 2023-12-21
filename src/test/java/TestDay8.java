@@ -11,10 +11,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Test class for Day 8 {@link d08.HauntedWasteland}
  */
-public class TestDay8 {
+class TestDay8 {
 	
 	@Test
-	public void test1() throws IOException {
+	void test1() throws IOException {
 		List<String> input = ParseUtil.readInputLineByLine("testInputDay8_partA_case1.txt");
 		
 		HauntedWasteland hauntedWasteland = new HauntedWasteland();
@@ -24,7 +24,7 @@ public class TestDay8 {
 	}
 	
 	@Test
-	public void test2() throws IOException {
+	void test2() throws IOException {
 		List<String> input = ParseUtil.readInputLineByLine("testInputDay8_partA_case2.txt");
 		
 		HauntedWasteland hauntedWasteland = new HauntedWasteland();
@@ -34,7 +34,7 @@ public class TestDay8 {
 	}
 	
 	@Test
-	public void test3() throws IOException {
+	void test3() throws IOException {
 		List<String> input = ParseUtil.readInputLineByLine("testInputDay8_partB.txt");
 		
 		HauntedWasteland hauntedWasteland = new HauntedWasteland();

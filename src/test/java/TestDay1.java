@@ -10,10 +10,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Test class for Day 1  {@link Trebuchet}
  */
-public class TestDay1 {
+class TestDay1 {
 	
 	@Test
-	public void test1() throws IOException {
+	void test1() throws IOException {
 		List<String> input = ParseUtil.readInputLineByLine("testInputDay1_partA.txt");
 		
 		int output = Trebuchet.getSum(input);
@@ -22,7 +22,7 @@ public class TestDay1 {
 	}
 	
 	@Test
-	public void test2() throws IOException {
+	void test2() throws IOException {
 		List<String> input = ParseUtil.readInputLineByLine("testInputDay1_partB.txt");
 		
 		List<String> strings = Trebuchet.replaceDigitsWrittenAsString(input);
@@ -30,5 +30,5 @@ public class TestDay1 {
 		
 		assertEquals(281, output);
 	}
-
+	
 }
